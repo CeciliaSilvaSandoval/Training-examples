@@ -4,19 +4,26 @@ Used commands:
 - npm i typescript 
 
 Package json similar format:
-    {
-        "name": "asignacion29_03_21",
-        "version": "1.0.0",
-        "description": "",
-        "main": "index.js",
-        "scripts": {
-            "tsconfig": "tsc --init"
-        },
-        "author": "",
-        "license": "ISC",
-        "dependencies": {
-            "typescript": "^4.2.3"
-        }
+```
+{
+    "name": "asignacion29_03_21",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "tsconfig": "tsc --init"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "typescript": "^4.2.3"
     }
-
+}
+```
 - npm run tsconfig
+
+# CONSULTED PAGES
+
+- https://www.npmjs.com/
+- https://www.npmjs.com/package/typescript
+- https://nodejs.org/es/
