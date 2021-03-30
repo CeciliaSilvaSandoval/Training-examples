@@ -1,7 +1,10 @@
 # WITH AN EXISTENT PROJECT TYPESCRIPT 
+```
 "scripts": {
     "tsconfig": "tsc --init"
   },
+```
+
 tsc is the compiler , we can run it with: npm run tsconfig
 
 # COMMANDS USED
