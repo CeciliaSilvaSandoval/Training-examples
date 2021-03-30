@@ -28,7 +28,7 @@ It won't be installed when someone runs npm install directly to install your pac
 
 --save is used to save the package required for the application to run.It will be installed together with the package whenever someone runs npm install package.
 
-ackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev
+https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev
 
 - npm update <package_name>    <-updates the packages based on * ^ (virgulilla) >
 - npm u <package_name>@<version>  <-Uninstall a package>
@@ -49,3 +49,4 @@ js file its created
 
 - https://www.npmjs.com/
 - https://webpack.js.org/
+- https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev
