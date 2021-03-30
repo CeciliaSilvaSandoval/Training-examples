@@ -12,16 +12,22 @@ tsc is the compiler , we can run it with: npm run tsconfig
 - npm i <package_name>@<version>  <-Install a package>
 - npm i --save-dev <package_name>@<version>  <-Install a package>
 Here in oue package.json will appear the next code:
-    "license": "ISC",
+```
+"license": "ISC",
     "devDependencies": {
         "typescript": "^4.2.3"
     }
+```
 
 - npm i --save <package_name>@<version>  <-Install a package>
-    "dependencies": {
+
+```
+"dependencies": {
     ...
     "moment": "^2.17.1"
     }
+```
+    
 
 --save-dev is used to save the package for **development purpose**. Example: unit tests, minification.
 It won't be installed when someone runs npm install directly to install your package. It's typically only installed if someone clones your source repository first and then runs npm install in it.
@@ -39,10 +45,13 @@ https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save
 
 # USING COMPILER TYPESCRIPT
 Adding tsc to our package.json
+```
 "scripts": {
     "tsconfig": "tsc --init",
     "start":"tsc"
   },
+```
+And type in terminal: npm run start
 js file its created
 
 # CONSULTED PAGES
