@@ -52,7 +52,8 @@ Adding tsc to our package.json
   },
 ```
 And type in terminal: npm run start
-js file its created
+
+js file its created!!!!
 
 # CONSULTED PAGES
 
