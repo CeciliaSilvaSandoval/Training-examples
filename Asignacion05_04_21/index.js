@@ -48,30 +48,28 @@ var Employee1 = /** @class */ (function () {
     return Employee1;
 }());
 var epm1 = new Employee1('Mark', 'sh2');
-//----------------------------------
-//1.- Create an interface for encrypt
-//1.- Create an Encryptor class
-var Encryptor = /** @class */ (function () {
-    function Encryptor() {
-    }
-    Encryptor.prototype.doEncrypt = function (data) {
-        return data;
-    };
-    Encryptor.prototype.doDecrypt = function (data) {
-        return data;
-    };
-    return Encryptor;
-}());
 var SymetricEncryption = /** @class */ (function () {
     function SymetricEncryption() {
     }
+    SymetricEncryption.prototype.doEncrypt = function (data) {
+        return data;
+    };
+    SymetricEncryption.prototype.doDecrypt = function (data) {
+        return data;
+    };
     return SymetricEncryption;
 }());
 var ASymetricEncryption = /** @class */ (function () {
     function ASymetricEncryption() {
     }
+    ASymetricEncryption.prototype.doEncrypt = function (data) {
+        return data;
+    };
+    ASymetricEncryption.prototype.doDecrypt = function (data) {
+        return data;
+    };
     return ASymetricEncryption;
 }());
 //usage
 var enc = new SymetricEncryption();
-//let result =enc.encrypt('Hello!!')
+var result = enc.doEncrypt('Hello!!');
