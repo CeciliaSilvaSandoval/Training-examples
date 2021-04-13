@@ -82,3 +82,4 @@ class ASymetricEncryption implements Encryptor {
 //usage
 let enc = new SymetricEncryption();
 let result = enc.doEncrypt('Hello!!')
+console.log(result)

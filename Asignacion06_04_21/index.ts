@@ -68,7 +68,6 @@ interface Person{
 function greet(xyz:Person){
     console.log(`hello ${xyz.name}`);
 }
-let persona={
-    name:'ceci'
-}
+
+let persona={name:'ceci'}
 greet(persona);
