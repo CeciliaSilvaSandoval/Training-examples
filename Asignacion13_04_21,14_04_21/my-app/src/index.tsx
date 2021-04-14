@@ -1,6 +1,8 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './container/App';
-import 'fomantic-ui-css/semantic.min.js';
+import App from './containers/App';
+import 'fontsource-roboto'
 
-ReactDOM.render(<App/>,document.getElementById('root'));
+ReactDOM.render( <App />, document.getElementById('root')
+);
 

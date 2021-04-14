@@ -60,6 +60,31 @@ https://fomantic-ui.com/introduction/getting-started.html
 https://material-ui.com/getting-started/installation/
 
 ```npm install @material-ui/core```
+```npm install @material-ui/icons```
+
+## Agregar fonts en material 
+
+install :
+```npm install fontsource-roboto```
+Then, you can import it in your entry-point.
+
+```import 'fontsource-roboto';```
+
+Estructure source folder:
+
+## components 
+
+    contains components
+
+## containers
+
+    contains specific components
+
+## layout
+
+    how your pages look
+
+https://material-ui.com/components/typography/#roboto-font-cdn
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
