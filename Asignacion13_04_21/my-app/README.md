@@ -48,6 +48,19 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+
+# fomatic-ui  13/04/21
+```npm install fomantic-ui-css```
+
+
+https://fomantic-ui.com/introduction/getting-started.html
+
+# Installing UI-Material 14/04/21
+
+https://material-ui.com/getting-started/installation/
+
+```npm install @material-ui/core```
+
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
