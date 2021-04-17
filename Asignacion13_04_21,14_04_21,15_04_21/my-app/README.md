@@ -74,17 +74,47 @@ Estructure source folder:
 
 ## components 
 
-    contains components
+    contains components: dummy components wich doesnt have have state, its simply used for diplay
 
 ## containers
 
-    contains specific components
+    contains specific components, what displays , what is going to change 
 
 ## layout
 
     how your pages look
 
 https://material-ui.com/components/typography/#roboto-font-cdn
+https://material-ui.com/components/grid/
+
+
+# ROUTING OUR PROJECT 15_04_21
+
+https://www.npmjs.com/package/react-router
+
+
+https://www.npmjs.com/package/react-router-dom
+https://www.npmjs.com/package/@types/react-router-dom
+
+typing:
+```npm i react-router```
+
+```npm i react-router-dom```
+```npm i @types/react-router-dom```
+
+index.txs
+
+```import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+import 'fontsource-roboto'
+import {BrowserRouter} from 'react-router-dom';
+
+ReactDOM.render( <App />, document.getElementById('root')
+);
+
+```
+Now our application is ready for routing.
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
