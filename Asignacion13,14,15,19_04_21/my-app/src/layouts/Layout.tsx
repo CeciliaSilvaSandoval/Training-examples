@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 //import Toolbar from '@material-ui/core/Toolbar';
 //import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { withRouter, RouteComponentProps} from 'react-router-dom';
 
 const drawerWidth = 240;
 ////********-------ESTA ES LA FORMA APP BAR, QUEREMOS QUE LA INFORMACION APAREZCA DENTRO DE ESTE CONTENEDOR -------*********
@@ -55,13 +56,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface Props {
+interface Props extends RouteComponentProps {
     // Aqui van los datos de props, title , items etc 
     //items: {}[];
     // title: string;
     // data: any;
     children:any;
     className:any;
+    list:string[];
     window?: () => Window;
 }
 
@@ -70,51 +72,62 @@ const Layout = (props: Props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-// ORIGINAL
-  // const drawer = (
-  //   <div>
-  //     <div className={classes.toolbar} />
-  //     {/* <Divider /> */}
-  //     <List>
-  //       {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-  //         <ListItem button key={text}>
-  //           <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-  //           <ListItemText primary={text} />
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //     {/* <Divider />
-  //     <List>
-  //       {['All mail', 'Trash', 'Spam'].map((text, index) => (
-  //         <ListItem button key={text}>
-  //           <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-  //           <ListItemText primary={text} />
-  //         </ListItem>
-  //       ))}
-  //     </List> */}
-  //   </div>
-  // );
 
+  const handleListItemClick = (event: any,index: number,) => {
+    setSelectedIndex(index);
+    switch(index){
+      case 0:
+        props.history.push ({pathname:'/home/inbox'});
+        return;
+      case 1:
+        props.history.push ({pathname:'/home/starred'});
+        return;
+    }
+  };
+// ORIGINAL
   const drawer = (
     <div>
-      {/* <div className={classes.toolbar} /> */}
-      {/* <Divider /> */}
       <List>
-        <ListItem button >
-          <ListItemIcon><InboxIcon /> </ListItemIcon>
-          <ListItemText primary="inbox" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon><MailIcon /> </ListItemIcon>
-          <ListItemText primary="Drafts" />
-        </ListItem>
+        {props.list.map((text, index) => (
+          <ListItem button key={text} selected={selectedIndex===index} onClick={(event) => handleListItemClick(event,index)}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );
+
+  //  {/* <ListItem button key={'Inbox'} selected={selectedIndex===0} onClick={(event) => handleListItemClick(event, 0)}>
+  //           {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+  //           <ListItemText primary={'Inbox'} />
+  //     </ListItem>
+  //     <ListItem button key={'Starred'} selected={selectedIndex===1} onClick={(event) => handleListItemClick(event, 1)}>
+  //           {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+  //           <ListItemText primary={'Starred'} />
+  //     </ListItem> */}
+
+  // const drawer = (
+  //   <div>
+  //     {/* <div className={classes.toolbar} /> */}
+  //     {/* <Divider /> */}
+  //     <List>
+  //       <ListItem button >
+  //         <ListItemIcon><InboxIcon /> </ListItemIcon>
+  //         <ListItemText primary="inbox" />
+  //       </ListItem>
+  //       <ListItem button>
+  //         <ListItemIcon><MailIcon /> </ListItemIcon>
+  //         <ListItemText primary="Drafts" />
+  //       </ListItem>
+  //     </List>
+  //   </div>
+  // );
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
@@ -174,4 +187,4 @@ const Layout = (props: Props) => {
   );
 }
 
-export default Layout;
+export default withRouter(Layout);

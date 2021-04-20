@@ -11,7 +11,8 @@ class App extends Component {
     return (
       <MasterLayout>
         <Switch>
-          <Route path="/" exact component={HomePage}></Route> 
+        <Route path="/" exact component={HomePage}></Route> 
+          <Route path="/home" component={HomePage}></Route> 
           <Route path="/Admin" component={AdminPage}></Route> 
           {/* <Route component={NotFoundPage}></Route>  */}
           <Route render={()=><NotFoundPage title="Page NotFound!!"/>}></Route> 
