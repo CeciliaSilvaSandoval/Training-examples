@@ -2,9 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+In the page:https://create-react-app.dev/docs/getting-started/
+
+We use the following command:
+```npx create-react-app my-app --template typescript ```
+
+If this appear:
+```You are running create-react-app 4.0.1, which is behind the latest release (4.0.3).We no longer support global installation of Create React App.```
+
+Please remove any global installs with one of the following commands:
+-sudo npm uninstall -g create-react-app
+
+and run first command.
+
+## Stating
 
 In the project directory, you can run:
+
+### cd my-app
+
+Take us to our created directory : npx create-react-app `my-app` --template typescript
 
 ### `npm start`
 
@@ -31,6 +48,74 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
+
+# fomatic-ui  13/04/21
+```npm install fomantic-ui-css```
+
+
+https://fomantic-ui.com/introduction/getting-started.html
+
+# Installing UI-Material 14/04/21
+
+https://material-ui.com/getting-started/installation/
+
+```npm install @material-ui/core```
+```npm install @material-ui/icons```
+
+## Agregar fonts en material 
+
+install :
+```npm install fontsource-roboto```
+Then, you can import it in your entry-point.
+
+```import 'fontsource-roboto';```
+
+Estructure source folder:
+
+## components 
+
+    contains components: dummy components wich doesnt have have state, its simply used for diplay
+
+## containers
+
+    contains specific components, what displays , what is going to change 
+
+## layout
+
+    how your pages look
+
+https://material-ui.com/components/typography/#roboto-font-cdn
+https://material-ui.com/components/grid/
+
+
+# ROUTING OUR PROJECT 15_04_21
+
+https://www.npmjs.com/package/react-router
+
+
+https://www.npmjs.com/package/react-router-dom
+https://www.npmjs.com/package/@types/react-router-dom
+
+typing:
+```npm i react-router```
+
+```npm i react-router-dom```
+```npm i @types/react-router-dom```
+
+index.txs
+
+```import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+import 'fontsource-roboto'
+import {BrowserRouter} from 'react-router-dom';
+
+ReactDOM.render( <App />, document.getElementById('root')
+);
+
+```
+Now our application is ready for routing.
+
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
@@ -44,27 +129,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
