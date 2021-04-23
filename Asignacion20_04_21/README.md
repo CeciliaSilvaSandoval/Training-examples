@@ -116,11 +116,6 @@ ReactDOM.render( <App />, document.getElementById('root')
 ```
 Now our application is ready for routing.
 
-# HAVING RESOURCES FROM THE BACK 20_04_21
-
-https://jsonplaceholder.typicode.com/posts
-https://www.npmjs.com/package/axios
-
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
@@ -133,4 +128,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).c f
+To learn React, check out the [React documentation](https://reactjs.org/).

@@ -30,6 +30,21 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
     },
   },
+  //Como no los usamos los quitamos 
+  // appBar: {
+  //   [theme.breakpoints.up('sm')]: {
+  //     width: `calc(100% - ${drawerWidth}px)`,
+  //     marginLeft: drawerWidth,
+  //   },
+  // },
+  // menuButton: {
+  //   marginRight: theme.spacing(2),
+  //   [theme.breakpoints.up('sm')]: {
+  //     display: 'none',
+  //   },
+  // },
+  // necessary for content to be below app bar
+  //toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
     height: 400,
@@ -47,6 +62,7 @@ interface Props extends RouteComponentProps {
     // title: string;
     // data: any;
     children:any;
+    className:any;
     list:string[];
     window?: () => Window;
 }
@@ -62,7 +78,7 @@ const Layout = (props: Props) => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleListItemClick = (event: any,index: number) => {
+  const handleListItemClick = (event: any,index: number,) => {
     setSelectedIndex(index);
     switch(index){
       case 0:
