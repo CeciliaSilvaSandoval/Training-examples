@@ -1,7 +1,7 @@
 import express from 'express';
 
 const server = express();
-const port = 3000;
+const port = 3080;
 
 
 /*  Loggin Middleware */
