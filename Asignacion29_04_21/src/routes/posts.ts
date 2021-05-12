@@ -1,6 +1,6 @@
 import express from 'express';
 import { getRepository } from 'typeorm'; 
-
+// Importando el modelo
 import Posts from '../models/posts.entity';
 
 let postsRouterv1 = express.Router();
@@ -17,8 +17,9 @@ postsRouterv1.post('/', async (req, res) => {
 
     let data = req.body;
     console.log(data);
-
+    // en la tabla crea los datos 
     const newPost = getRepository(Posts).create( data );
+    //Guarda los datos creados
     let [post, error] = await handleAsync(getRepository(Posts).save(newPost));
 
     if (error) return res.send(error);
@@ -34,13 +35,16 @@ postsRouterv1.get('/', async (req, res) => {
 
     res.send(posts);
 });
+
 postsRouterv1.get('/:id', (req, res) => {
     let post = data.posts.filter( item => item.id.toString() == req.params.id);
     res.json(post[0]);
 });
+
 postsRouterv1.patch('/', (req, res) => {
     res.json('patching...');
 });
+
 postsRouterv1.delete('/', (req, res) => {
     res.json('deleting...');
 });

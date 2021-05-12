@@ -3,6 +3,8 @@ import 'dotenv/config';
 
 import express from 'express';
 import cors from 'cors';
+
+// integremos los modelos a la aplicacion, create connection para crear una coneccion con la base de datos
 import { createConnection } from 'typeorm'; 
 
 import postsRouterv1 from './routes/posts';
@@ -24,7 +26,7 @@ async function connectToPersistence( ) {
 }
 connectToPersistence( );
 
-// retreive body
+// retreive body--- Sin este no se podia enviar el json 1:56
 server.use(express.urlencoded());
 server.use(express.json());
 

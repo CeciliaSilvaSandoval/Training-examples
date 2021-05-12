@@ -18,5 +18,5 @@ class Users {
     @Column()
     phone?: string;
 }
-
+ 
 export default Users;

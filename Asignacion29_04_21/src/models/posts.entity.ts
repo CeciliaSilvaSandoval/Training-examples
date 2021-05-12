@@ -17,3 +17,4 @@ class Posts {
 }
 
 export default Posts;
+// this is a model 
