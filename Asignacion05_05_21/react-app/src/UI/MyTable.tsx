@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
+// // FILL THE COLUMNS STATIC
 // interface Column {
 //   id: 'name' | 'code' | 'population' | 'size' | 'density';
 //   label: string;
@@ -50,7 +51,7 @@ import TableRow from '@material-ui/core/TableRow';
 //   size: number;
 //   density: number;
 // }
-
+// // FILL THE DATA STATIC
 // function createData(name: string, code: string, population: number, size: number): Data {
 //   const density = population / size;
 //   return { name, code, population, size, density };
@@ -82,22 +83,19 @@ const useStyles = makeStyles({
     maxHeight: 440,
   },
 });
-
-interface IProps {
-    rows: any[];
+interface IProps{
+    rows:any[];
 }
-
-export default function MyTable ( props: IProps) {
-
+export default function MyTable(props:IProps){
+  
   const classes = useStyles();
-
+    // 2 STATE
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
+    // 2 MANAGING STATE
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
   };
-
   const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
@@ -109,21 +107,37 @@ export default function MyTable ( props: IProps) {
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              {Object.keys(props.rows[0]).map((key, index) => (
-                index===0 ? <TableCell key={index} style={{minWidth: 170}}>{key}</TableCell> : <TableCell key={index} align="right" style={{minWidth: 170}}>{key}</TableCell> 
+                {/* LOOP THE COLUMNS, PLACE THE LABEL AND STYLES */}
+                {/* {key:row,key:row} */}
+              {Object.keys(props.rows[0]).map((key,index) => (
+                index === 0 ?<TableCell key={index} style={{ minWidth: 170}}> {key}</TableCell>:<TableCell key={index} align="right" style={{ minWidth: 170}}> {key}</TableCell>
               ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {props.rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row: any, index:number) => {
+            {props.rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row:any,index:number) => {
               return (
                 <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-                  {Object.values<string>(row).map((value, index) => (
-                    index===0 ? <TableCell key={index}>{value}</TableCell> : <TableCell key={index} align="right">{value}</TableCell>
-                  ))}
+                  {Object.values<string>(row).map((value,index) => (
+                      index===0 ? <TableCell key={index}>{value}</TableCell> :<TableCell key={index} align="right">{value}</TableCell>
+                    ))}
                 </TableRow>
               );
             })}
+            {/* {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row:any,index:number) => {
+              return (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  {columns.map((column) => {
+                    const value = row[column.id];
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        {column.format && typeof value === 'number' ? column.format(value) : value}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })} */}
           </TableBody>
         </Table>
       </TableContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,8 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-
-const MyPaper =(props:any) => {
+const MyPaper2 =(props:any) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -28,9 +27,8 @@ const MyPaper =(props:any) => {
         <Typography variant="body1" gutterBottom>
         {props.body1}
         </Typography>
-        <Button variant="contained" color="primary" onClick={props.clicked}>Details</Button>
         </Paper>
     </div>
   );
 }
-export default  MyPaper;
+export default  MyPaper2;
