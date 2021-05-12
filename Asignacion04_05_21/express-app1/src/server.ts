@@ -25,7 +25,7 @@ async function connectToPersistence( ) {
 connectToPersistence( );
 
 // retreive body
-// server.use(express.urlencoded());
+server.use(express.urlencoded());
 server.use(express.json());
 
 // Set cors headers

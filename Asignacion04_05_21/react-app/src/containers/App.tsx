@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
-import { Switch, Route } from 'react-router-dom';
-
+import React, { Component } from 'react';// 7.2k (gzipped: 3k)
 import MasterLayout from '../UI/layouts/MasterLayout';
 import HomePage from '../containers/HomePage/HomePage';
 import AdminPage from '../containers/AdminPage/AdminPage';
-import PageNotFound from '../components/PageNotFound/PageNotFound';
+import NotFoundPage from '../containers/NotFoundPage/NotFoundPage';
+import {Switch,Route} from 'react-router-dom';
 
 class App extends Component {
 
@@ -12,12 +11,14 @@ class App extends Component {
     return (
       <MasterLayout>
         <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/home" component={HomePage} />
-          <Route path="/admin" component={AdminPage} />
-          <Route render={() => <PageNotFound title="Page Not Found!"/>} />
-        </Switch>
+        <Route path="/" exact component={HomePage}></Route> 
+          <Route path="/home" component={HomePage}></Route> 
+          <Route path="/Admin" component={AdminPage}></Route> 
+          {/* <Route component={NotFoundPage}></Route>  */}
+          <Route render={()=><NotFoundPage title="Page NotFound!!"/>}></Route> 
+        </Switch>   
       </MasterLayout>
+      
     );
   }
 }

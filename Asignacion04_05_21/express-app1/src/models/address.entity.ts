@@ -8,6 +8,8 @@ class Address {
 
     @Column()
     city?: string;
+
+
 }
 
 export default Address;

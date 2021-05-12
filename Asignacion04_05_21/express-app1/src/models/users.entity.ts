@@ -1,7 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn} from 'typeorm'; 
-
-import Address from './address.entity';
-import Company from './company.entity';
+import { Entity, PrimaryGeneratedColumn, Column,OneToOne,JoinColumn } from 'typeorm'; 
+import Address from './address.entity'
+import Company from './company.entity'
 
 @Entity()
 class Users {
@@ -21,14 +20,14 @@ class Users {
     @Column()
     phone?: string;
 
-    @OneToOne(() => Address, {cascade: true})
-    @JoinColumn( {name: 'addressId'} )
-    address?: Address;
+    @OneToOne(() => Address,{cascade:true})
+    @JoinColumn({name:'addressId'})
+    address?:Address;
 
-    @OneToOne(() => Company, {cascade: true})
-    @JoinColumn( {name: 'companyId'} )
-    company?: Company;
-   
+    @OneToOne(() => Company,{cascade:true})
+    @JoinColumn({name:'companyId'})
+    company?:Company
 }
 
 export default Users;
+// https://typeorm.io/#/one-to-one-relations

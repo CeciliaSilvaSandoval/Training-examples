@@ -10,4 +10,4 @@ class Company {
     name?: string;
 }
 
-export default Company;
+export default Company ;

@@ -20,8 +20,8 @@ usersRouter.post('/', async (req, res) => {
 
 // Read all User
 usersRouter.get('/', async (req, res) => {
-
-    let [users, error] = await handleAsync(getRepository(Users).find( {relations: ["address", "company"]} ));
+// Agregar relaciones para que se vean en las tablas
+    let [users, error] = await handleAsync(getRepository(Users).find({relations:["address","company"]}));
     if (error) return res.send(error);
 
     res.send(users);
@@ -31,8 +31,8 @@ usersRouter.get('/', async (req, res) => {
 usersRouter.get('/:id', async (req, res) => {
 
     const id = req.params.id;
-
-    let [user, error] = await handleAsync(getRepository(Users).findOne(id, {relations: ["address", "company"]}));
+// Agregar relaciones para que se vean en las tablas
+    let [user, error] = await handleAsync(getRepository(Users).findOne(id,{relations:["address","company"]}));
     if (error) return res.send(error);
 
     if (user) {
@@ -46,14 +46,15 @@ usersRouter.get('/:id', async (req, res) => {
 usersRouter.patch('/:id', async (req, res) => {
 
     const id = Number(req.params.id);
+    //When you save , to update you need the id , otherwise it is going to create a new object
     // const data = req.body;
-    const data = { id:id, ...req.body};
-
+    const data={id:id,...req.body}
     // let [response, error] = await handleAsync(getRepository(Users).update(id, data));
     let [user, error] = await handleAsync(getRepository(Users).save(data));
+    //Asegura una actualizacion , no una incersion 
     if (error) return res.send(error);
 
-    let [updatedUser, error2] = await handleAsync(getRepository(Users).findOne(id, {relations: ["address", "company"]}));
+    let [updatedUser, error2] = await handleAsync(getRepository(Users).findOne(id));
     if (error2) return res.send(error2);
 
     if (updatedUser) {

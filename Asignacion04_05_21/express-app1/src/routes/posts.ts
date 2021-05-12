@@ -32,7 +32,6 @@ postsRouterv1.get('/:id', async (req, res) => {
     const id = req.params.id;
 
     let [post, error] = await handleAsync(getRepository(Posts).findOne(id));
-    
     if (error) return res.send(error);
 
     if (post) {
