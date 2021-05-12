@@ -1,6 +1,6 @@
 import express from 'express';
-let router=express.Router();
-let posts={
+let postsRouterv1 =express.Router();
+let data={
     posts:[
         {id:'1',
         userId:'1',
@@ -21,19 +21,27 @@ let posts={
 };
 //We have to implemments the method/verbs to be used 
 
-router.get('/', (req, res) => {
-    res.json(posts.posts);
+postsRouterv1.get('/', (req, res) => {
+    res.json(data.posts);
 });
+
+postsRouterv1.get('/:id', (req, res) => {
+    let post=data.posts.filter(item => item.id.toString() == req.params.id );
+    // res.json(req.params.id);//Obtenemos el id de params , pero necesitamos la informacion
+    res.json(post[0]);
+    //Ya podemos ocupar este para visualizar los posts
+});
+
 //Adding the method for post 
-router.post('/', (req, res) => {
-    res.json('Creating');
+postsRouterv1.post('/', (req, res) => {
+    res.json('Creating postsRouterv1');
 });
 //Adding the method for patch
-router.patch('/', (req, res) => {
-    res.json('Patching');
+postsRouterv1.patch('/', (req, res) => {
+    res.json('Patching postsRouterv1');
 });
 //Adding the method for delete
-router.delete('/', (req, res) => {
-    res.json('Delating');
+postsRouterv1.delete('/', (req, res) => {
+    res.json('Delating postsRouterv1');
 });
-export default router;
+export default postsRouterv1;

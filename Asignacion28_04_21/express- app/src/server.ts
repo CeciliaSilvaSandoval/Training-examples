@@ -1,17 +1,23 @@
 import express from 'express';
-import postRouter from './routes/posts'
+import cors from 'cors';
+import postRouterv1 from './routes/posts'
+// import postRouterv2 from './routes/posts1'
 import userRouter from './routes/users'
 const server = express();
-const port = 3001;
+const port = 3501;
+
+//Set cors headers
+server.use(cors());
 
 /*  Loggin Middleware */
 server.use((req, res, next) => {
     console.log(`${req.method} ${req.path}`);
     next();
 });
-//register routes
-server.use('/posts',postRouter);
 
+//register routes
+server.use('/posts',postRouterv1);
+// server.use('/v2/posts',postRouterv2);
 server.use('/users',userRouter);
 
 //Forma1
@@ -20,7 +26,7 @@ server.get('/users2', (req, res) => {
 });
 
 server.get('/', (req, res) => {
-    res.send('Hello world from express');
+    res.send('Grettings');
 });
 
 server.listen(port, () => {
