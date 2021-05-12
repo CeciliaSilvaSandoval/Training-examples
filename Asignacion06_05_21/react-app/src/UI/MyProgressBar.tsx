@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      justifyContent:'center',
       '& > * + *': {
         marginLeft: theme.spacing(2),
       },
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function MyProgress() {
+export default function MyProgressBar() {
   const classes = useStyles();
 
   return (

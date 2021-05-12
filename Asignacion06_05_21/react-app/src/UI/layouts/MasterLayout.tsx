@@ -1,40 +1,47 @@
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+//import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import MyAppBar from '../MyAppBar';
 
-import MyAppBar from '../AppBar';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
-    },
-  }),
-);
-
-const MasterLayout = (props: any) => {
+//********-------ESTA ES LA FORMA BASE DE NUESTRO PROYECTO -------*********
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    // bottom: 10 ,
+    // position: 'fixed',
+    // width: '100%',
+  },
+  // main:{
+  //   height:'100%',
+  // }
+}));
+// Cambio este 
+const MasterLayout = ( props: any ) => {
   const classes = useStyles();
-
+//Forma del layout : header, footer y body
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} direction="column" justify="space-between" alignItems="stretch">
-        <Grid item xs={12}>
-          <MyAppBar/>
-        </Grid>
-        <Grid item xs={12}>
+      <Grid container spacing={3} direction="column" justify="space-between" alignItems="stretch" >
+      <Grid item xs={12} >     {/* Grid de 12 --- Header*/}
+          <MyAppBar></MyAppBar>
+      </Grid>
+        <Grid item xs={12} >{/* Grid de 12 --- Body*/}
           {props.children}
         </Grid>
-        <Grid item xs={12}>
-            <Paper elevation={0} className={classes.paper}>Copyright 2021 </Paper>
+        <Grid item xs={12}>{/* Grid de 12 --- Footer*/}
+          <Paper elevation={2} className={classes.paper}>Copyright 2021</Paper>
         </Grid>
       </Grid>
     </div>
   );
 }
 
+//y lo exporto aqui 
 export default MasterLayout;

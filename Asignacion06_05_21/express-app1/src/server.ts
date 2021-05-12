@@ -1,11 +1,11 @@
 import express from 'express';
-import {IRoute} from './routes/index.route';
-import { createConnection } from 'typeorm';
 
+import {IRoute} from './routes/index.route';
 import registerCommonMiddleware from './middleware/common.middleware';
 import registerLoggingMiddleware from './middleware/logging.middleware';
 import registerRoutegMiddleware from './middleware/route.middleware';
 import registerErrorHandlingMiddleware from './middleware/error.middleware';
+import { createConnection } from 'typeorm';
 import config from './typeormconfig';
 
 
@@ -16,18 +16,19 @@ class Server {
     constructor(routes: IRoute[] ){
         this.server = express();
 
-        this.connectToPersistenceLayer();
+        this.connectToPersistence();
         this.registerMiddleware();
         this.registerRoutes( routes );
         this.registerErrorHandling( );
     }
 
-    private async connectToPersistenceLayer( ) {
+    // Agregando conexion con la base de datos 
+    private async connectToPersistence( ) {
         try {
           await createConnection( config );
           console.log(`Persistence layer connected`);
         } catch( error ) {
-          console.log(`Persistence layer connection layer : `, error);
+          console.log(`Error connectionf to Persistence layer  : `, error);
           return error;
         } 
       }
@@ -42,7 +43,6 @@ class Server {
     }
 
     private registerErrorHandling(){
-        // this.server.use(registerErrorHandlingMiddleware);
         registerErrorHandlingMiddleware(this.server);
     }
 
