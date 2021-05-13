@@ -5,8 +5,8 @@ import express from 'express';
 import cors from 'cors';
 import { createConnection } from 'typeorm'; 
 
-import postsRouterv1 from './routes/posts';
-import usersRouter from './routes/users';
+// import postsRouterv1 from './routes/posts';
+// import usersRouter from './routes/users';
 import config from './typeormconfig';
 
 const server = express( );
