@@ -53,7 +53,7 @@ class Route implements IRoute{
         if (item) {
             res.json(item);
         } else {
-            res.send(`No post found for ${id}!`);
+            res.send(`No item found for ${id}!`);
         }
     }
     protected patch= async (req:Request, res:Response, next:NextFunction) => {
@@ -66,7 +66,7 @@ class Route implements IRoute{
         if (updatedItem) {
             res.json(updatedItem);
         } else {
-            res.send(`No post found for ${id}!`);
+            res.send(`No item found for ${id}!`);
         }
     }
     protected delete= async (req:Request, res:Response, next:NextFunction) => {
@@ -79,7 +79,7 @@ class Route implements IRoute{
         if (deleteResponse.affected === 1){
             res.send({deleted: true});
         } else {
-            res.send(`No post found for ${id}!`);
+            res.send(`No item found for ${id}!`);
         }
     }
 

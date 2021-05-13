@@ -14,7 +14,6 @@ class Service implements IService{
     constructor (entity:any){
         this.entity=entity;
     }
-
     create=async(data:any)=>{
         const newItem = getRepository(this.entity).create( data );
         let [item, error] = await handleAsync(getRepository(this.entity).save(newItem));
