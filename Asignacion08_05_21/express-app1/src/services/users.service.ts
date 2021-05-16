@@ -9,7 +9,6 @@ class UserService extends Service{
         let [items, error] = await handleAsync(getRepository(this.entity).find({relations: ["address", "company"]}));
          if (error) return new Error(error.message);
          return items;
-
     }
     findOne=async(id:string)=>{
         let [item, error] = await handleAsync(getRepository(this.entity).findOne(id,{relations: ["address", "company"]}));
