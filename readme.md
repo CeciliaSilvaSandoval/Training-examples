@@ -1,4 +1,8 @@
 # Clases Temas
+Asignacion11_05_21 Creacion de tipos de errores, funciones sustirtuidas y fundamentos de redux
+
+Asignacion10_05_21 Buscador
+
 Asignacion08_05_21 connecting express-app and react-app for deploying
 
 Asignacion06_05_21 Haciendo dinamico el acceso a los metodos
