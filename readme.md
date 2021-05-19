@@ -1,5 +1,7 @@
 # Clases Temas
-Asignacion11_05_21 Creacion de tipos de errores, funciones sustirtuidas y fundamentos de redux
+Asignacion 13_05_21 redux interactuando con el store 
+
+Asignacion 11_05_21 Creacion de tipos de errores, funciones sustirtuidas y fundamentos de redux
 
 Asignacion10_05_21 Buscador
 
