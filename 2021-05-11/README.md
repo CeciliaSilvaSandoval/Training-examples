@@ -1,4 +1,4 @@
-# Creacion de tipos de errores, funciones sustirtuidas fundamentos de redux
+# Creacion de tipos de errores, funciones sustirtuidas y fundamentos de redux
 ![Alt text](img1.png)
 ![Alt text](img2.png)
 ![Alt text](img3.png)
