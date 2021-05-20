@@ -1,4 +1,6 @@
 # Clases Temas
+Asignacion 15_05_21 validadores e implementacion del middleware
+
 Asignacion 13_05_21 redux interactuando con el store 
 
 Asignacion 11_05_21 Creacion de tipos de errores, funciones sustirtuidas y fundamentos de redux
