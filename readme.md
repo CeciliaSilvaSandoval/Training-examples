@@ -1,4 +1,6 @@
 # Clases Temas
+Asignacion 17_05_21 validadores 
+
 Asignacion 15_05_21 validadores e implementacion del middleware
 
 Asignacion 13_05_21 redux interactuando con el store 
