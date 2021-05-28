@@ -1,4 +1,6 @@
 # Clases Temas
+Asignacion 18 parseo xml y validaciones
+
 Asignacion 17_05_21 validadores 
 
 Asignacion 15_05_21 validadores e implementacion del middleware
