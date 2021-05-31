@@ -1,5 +1,7 @@
 # Clases Temas
-Asignacion 18 parseo xml y validaciones
+Asignacion 19_05_21 inicios del login
+
+Asignacion 18_05_21 parseo xml y validaciones
 
 Asignacion 17_05_21 validadores 
 
