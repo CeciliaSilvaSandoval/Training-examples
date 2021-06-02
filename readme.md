@@ -1,4 +1,6 @@
 # Clases Temas
+Asignacion 24-05-2021 Completando autentificacion del login y añadiendo logout
+
 Asignacion 22-05-2021 autentificacion con token login frontend
 
 Asignacion 19_05_21 Iniciando login
